@@ -2,6 +2,10 @@
 
 🦄 Zustand Utility For Creating Async Slice easily in TypeScript!
 
+[![codecov](https://codecov.io/github/mym0404/zustand-async-slice/graph/badge.svg?token=RW68LVDRJ3)](https://codecov.io/github/mym0404/zustand-async-slice)
+
+
+
 <image src="https://raw.githubusercontent.com/mym0404/image-archive/master/202409101629874.png" alt="thumbnail"/>
 
 ## Introduce

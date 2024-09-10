@@ -12,6 +12,10 @@ It even provides full support for TypeScript. 🔥
 
 It minimizes the hassle for developers to manually write types, ensuring a smooth developer experience
 
+If we pass `hello`, it generates like that.
+
+![](https://raw.githubusercontent.com/mym0404/image-archive/master/202409101608163.png)
+
 
 ## Install
 

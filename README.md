@@ -60,13 +60,13 @@ const helloSlice = asyncSlice<MyStoreState>()({
     await new Promise((r) => setTimeout(r, 3000)); // wait 3 seconds
     return 1;
   },
-  // on asyncFn has benn called
+  // on asyncFn has been called
   onRun: ({ get, set }) => {},
-  // on asyncFn has benn completed as success or failure
+  // on asyncFn has been completed as success or failure
   onSettled: ({ get, set, data, error, isError, isSuccess }) => {},
-  // on asyncFn has benn completed as success
+  // on asyncFn has been completed as success
   onSuccess: ({ get, set, data }) => {},
-  // on asyncFn has benn completed as error
+  // on asyncFn has been completed as error
   onError: ({ get, set, error }) => {},
 });
 ```

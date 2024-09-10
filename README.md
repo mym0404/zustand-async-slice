@@ -83,7 +83,8 @@ const helloSlice = asyncSlice<MyStoreState, { arg1: number; arg2: string }>()({
 
 Check that the parameter type of the async function is defined as the second argument of `asyncSlice` and that `params` are added to each callback function.
 
-
+>[!TIP]
+> Why currying? `()(...)` > [Read on Zustand TS docs](https://zustand.docs.pmnd.rs/guides/typescript)
 
 ### Step 2. Inject slice into original store `create` process.
 

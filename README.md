@@ -96,8 +96,9 @@ export const useMyStore = create<WithAsyncState<typeof helloSlice>>()((set, get,
 
 Thanks to `WrapAsyncState`, we can simply pass the slice's type to it, and without needing to redefine the existing Store's type using `&`, we can just pass it as a type argument to `create`.
 
-![](https://raw.githubusercontent.com/mym0404/image-archive/master/202409101608163.png)
 
 ### Step 3. Use the store in the way you enjoy.
+
+![](https://raw.githubusercontent.com/mym0404/image-archive/master/202409101608163.png)
 
 

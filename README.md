@@ -36,7 +36,7 @@ name: `hello`
 
 - `isHelloFetching: boolean`
 - `isHelloError: boolean`
-- `helloData: Data`
+- `helloData: Data | undefined`
   - type parameter `Data` is inferred return type of `asyncFn`
 - `runHello: (params: Params, callbacks?: Callbacks) => void`
 - `runHello: (callbacks?: Callbacks) => void`

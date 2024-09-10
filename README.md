@@ -117,4 +117,23 @@ Thanks to `WrapAsyncState`, we can simply pass the slice's type to it, and witho
 
 ![](https://raw.githubusercontent.com/mym0404/image-archive/master/202409101712405.png)
 
+### Full Example
 
+```ts
+import { asyncSlice, WithAsyncState } from 'zustand-async-slice';
+
+type MyState = { age: number; };
+
+const helloSlice = asyncSlice<MyState>()({
+  name: 'hello',
+  asyncFn: async ({ set }) => { // can be async or not
+    set({ age: 1 });
+    return 1;
+  },
+});
+
+const useMyStore = create<WithAsyncState<typeof helloSlice>>((...s) => ({
+  age: 0,
+  ...helloSlice(...s),
+}));
+```

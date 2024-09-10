@@ -2,8 +2,6 @@
 
 🦄 Zustand Utility For Creating Async Slice easily in TypeScript!
 
-![JS Check](https://github.com/mym0404/zustand-async-slice/workflows/JS%20Check/badge.svg)
-
 ## Introduce
 
 The `asyncSlice` function automatically creates and manages various states inside the Zustand Store by simply passing the slice name to `name` and the asynchronous function to `asyncFn`.

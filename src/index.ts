@@ -8,7 +8,7 @@ type AsyncSliceBaseType<Name extends string, Data> = Record<
   Record<`${Uncapitalize<Name>}Data`, Data | undefined>;
 
 type AsyncSliceTypeWithoutParams<Name extends string, Data> = AsyncSliceBaseType<Name, Data> &
-  Record<`run${Capitalize<Name>}`, (p?: any) => Promise<Data>>;
+  Record<`run${Capitalize<Name>}`, () => Promise<Data>>;
 
 type AsyncSliceTypeWithParams<Name extends string, Data, Params> = AsyncSliceBaseType<Name, Data> &
   Record<`run${Capitalize<Name>}`, (params: Params) => Promise<Data>>;

@@ -90,13 +90,13 @@ export function asyncSlice<State = {}>(): (p: {
     const isNameFetchingKey = `is${capitalName}Fetching`;
     const isNameErrorKey = `is${capitalName}Error`;
     const dataKey = `${uncapitalName}Data`;
-    const doKey = `run${capitalName}`;
+    const runKey = `run${capitalName}`;
 
     return (set: GetSetApi<State>['set'], get: GetSetApi<State>['get']) => ({
       [isNameFetchingKey]: false,
       [isNameErrorKey]: false,
       [dataKey]: undefined,
-      [doKey]: async (params: any) => {
+      [runKey]: async (params: any) => {
         try {
           onRun?.({ params, get, set });
           set({
@@ -119,6 +119,8 @@ export function asyncSlice<State = {}>(): (p: {
             [isNameFetchingKey]: false,
             [dataKey]: data,
           } as Partial<State>);
+
+          return data;
         } catch (error: any) {
           onSettled?.({ error, get, set, params, isSuccess: false, isError: true });
           onError?.({ error, get, set, params });

@@ -1,6 +1,6 @@
 {
   "name": "zustand-async-slice",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Zustand Utility For Creating Async Slice easily",
   "homepage": "https://github.com/mym0404/zustand-async-slice",
   "scripts": {

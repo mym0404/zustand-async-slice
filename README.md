@@ -14,7 +14,7 @@ It minimizes the hassle for developers to manually write types, ensuring a smoot
 
 If we pass `hello`, it generates like that.
 
-![](https://raw.githubusercontent.com/mym0404/image-archive/master/202409101608163.png)
+![](https://raw.githubusercontent.com/mym0404/image-archive/master/202409101712405.png)
 
 
 ## Install
@@ -32,9 +32,16 @@ name: `hello`
 
 - `isHelloFetching: boolean`
 - `isHelloError: boolean`
-- `helloData: Data` (type parameter `Data` is inferred return type of `asyncFn`)
-- `runHello: (params: Params) => Promise<Data>` (type parameter `Params` should be passed second argument of `asyncSlice`.)
-- `runHello: () => Promise<Data>` (is there no params? then no arg function will be generated ‼️)
+- `helloData: Data`
+  - type parameter `Data` is inferred return type of `asyncFn`
+- `runHello: (params: Params, callbacks?: Callbacks) => void`
+- `runHello: (callbacks?: Callbacks) => void`
+  - type parameter `Params` should be passed second argument of `asyncSlice`
+  - is there no params? then no arg function will be generated ‼
+  - callbacks are `onRun`, `onSettled`, `onSuccess`, `onError`. You can pass callbacks from the caller at the runtime or definition of the async slice.
+- `runHelloAsync: (params: Params) => Promise<Data>`
+- `runHelloAsync: () => Promise<Data>`
+  - returnning `Promise<Data>` function is available too
 
 ### Step 1. Create Async Slice with `asyncSlice`
 
@@ -104,6 +111,6 @@ Thanks to `WrapAsyncState`, we can simply pass the slice's type to it, and witho
 
 ### Step 3. Use the store in the way you enjoy.
 
-![](https://raw.githubusercontent.com/mym0404/image-archive/master/202409101608163.png)
+![](https://raw.githubusercontent.com/mym0404/image-archive/master/202409101712405.png)
 
 

@@ -4,9 +4,9 @@
   "description": "Zustand Utility For Creating Async Slice easily",
   "homepage": "https://github.com/mym0404/zustand-async-slice",
   "scripts": {
-    "t": "yarn lint --cache && yarn tsc --noEmit && jest --coverage",
+    "t": "yarn lint --cache && yarn tsc --noEmit && yarn test",
     "lint": "eslint src --ext .ts,.tsx,.js,.jsx",
-    "test": "jest",
+    "test": "jest --coverage",
     "release": "zx tool/publish.mjs",
     "build": "yarn tsc"
   },

@@ -31,9 +31,9 @@ export type WithAsyncState<T> = T extends { __T: infer U } ? U : never;
 export function asyncSlice<State extends object, Params>(): <Name extends string, Data = void>(p: {
   name: Name;
   asyncFn: AsyncFnWithParams<State, Params, Data>;
-  onSuccess: (params: { params: Params; data: Data } & GetSetApi<State>) => void;
-  onError: (params: { params: Params; error: any } & GetSetApi<State>) => void;
-  onSettled: (
+  onSuccess?: (params: { params: Params; data: Data } & GetSetApi<State>) => void;
+  onError?: (params: { params: Params; error: any } & GetSetApi<State>) => void;
+  onSettled?: (
     params: {
       params: Params;
       data?: Data;
@@ -42,7 +42,7 @@ export function asyncSlice<State extends object, Params>(): <Name extends string
       isError: boolean;
     } & GetSetApi<State>,
   ) => void;
-  onRun: (params: { params: Params } & GetSetApi<State>) => void;
+  onRun?: (params: { params: Params } & GetSetApi<State>) => void;
 }) => StateCreator<State, [], [], AsyncSliceTypeWithParams<Name, Data, Params>> & {
   __T: State & AsyncSliceTypeWithParams<Name, Data, Params>;
 };
@@ -51,12 +51,12 @@ export function asyncSlice<State extends object, Params>(): <Name extends string
 export function asyncSlice<State extends object>(): <Name extends string, Data = void>(p: {
   name: Name;
   asyncFn: AsyncFnWithoutParams<State, Data>;
-  onSuccess: (params: { data: Data } & GetSetApi<State>) => void;
-  onError: (params: { error: any } & GetSetApi<State>) => void;
-  onSettled: (
+  onSuccess?: (params: { data: Data } & GetSetApi<State>) => void;
+  onError?: (params: { error: any } & GetSetApi<State>) => void;
+  onSettled?: (
     params: { data?: Data; error?: any; isSuccess: boolean; isError: boolean } & GetSetApi<State>,
   ) => void;
-  onRun: (params: {} & GetSetApi<State>) => void;
+  onRun?: (params: {} & GetSetApi<State>) => void;
 }) => StateCreator<State, [], [], AsyncSliceTypeWithoutParams<Name, Data>> & {
   __T: State & AsyncSliceTypeWithoutParams<Name, Data>;
 };

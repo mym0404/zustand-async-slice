@@ -8,23 +8,13 @@
 
 ### Pull request(PR)
 
-- We are currently working on `4.0.0` release on `next` branch. Please make a `PR` to `next` branch.
+- Please write changes as concrete as possible.
+- Thank you for contributing.
 
 ### Coding Guidelines
 
 Please follow the Coding conventions as much as possible when contributing your code.
 
-- The indent tab is two spaces.
-- The class declaration and the `{}` in curly brackets such as function, if, foreach, for, and while should be in the following format. Also if you installed eslint in vscode or in your code editor, it will help you with linting. \* `{` should be placed in same line and `}` should be placed in next line.
-
-```
-for (let i = 0; i < 10; i++) {
-  ...
-}
-array.forEach((e) => {
-  ...
-});
-```
-
-- Space before `(` and after `)`.
-- **If you find code that does not fit in the coding convention, do not ever try to fix code that is not related to your purpose.**
+- ESLint without error or warning
+- Prettier fixed
+- TypeScript without error

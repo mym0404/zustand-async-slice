@@ -132,11 +132,11 @@ export function asyncSlice<State = {}>(): (p: {
     const createRunAsyncFunction =
       (set: GetSetApi<State>['set'], get: GetSetApi<State>['get']) => async (params: any) => {
         try {
-          onRun?.({ params, get, set });
           set({
             [isNameFetchingKey]: true,
             [isNameErrorKey]: false,
           } as Partial<State>);
+          onRun?.({ params, get, set });
 
           const data = await asyncFn(
             params === null || params === undefined
@@ -147,21 +147,21 @@ export function asyncSlice<State = {}>(): (p: {
             { set, get },
           );
 
-          onSettled?.({ data, get, set, params, isSuccess: true, isError: false });
-          onSuccess?.({ data, get, set, params });
           set({
             [isNameFetchingKey]: false,
             [dataKey]: data,
           } as Partial<State>);
+          onSettled?.({ data, get, set, params, isSuccess: true, isError: false });
+          onSuccess?.({ data, get, set, params });
 
           return data;
         } catch (error: any) {
-          onSettled?.({ error, get, set, params, isSuccess: false, isError: true });
-          onError?.({ error, get, set, params });
           set({
             [isNameFetchingKey]: false,
             [isNameErrorKey]: true,
           } as Partial<State>);
+          onSettled?.({ error, get, set, params, isSuccess: false, isError: true });
+          onError?.({ error, get, set, params });
           // rethrow for non-async function
           throw error;
         }

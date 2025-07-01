@@ -1,4 +1,4 @@
-import type { StateCreator, StoreMutatorIdentifier } from 'zustand';
+import type { StateCreator } from 'zustand';
 
 function isCallbacksObj(v: any): v is CallbacksWithParams<any, any> {
   return (
@@ -63,9 +63,9 @@ type AsyncSliceTypeWithoutParams<
   Record<`run${Capitalize<Name>}`, (callbacks?: CallbacksWithoutParams<State, Data>) => void> &
   Record<`run${Capitalize<Name>}Async`, () => Promise<Data>>;
 
-type GetSetApi<State, Mos extends [StoreMutatorIdentifier, unknown][] = []> = {
-  set: Parameters<StateCreator<State, [], Mos>>['0'];
-  get: Parameters<StateCreator<State, [], Mos>>['1'];
+type GetSetApi<State> = {
+  set: Parameters<StateCreator<State>>['0'] | any;
+  get: Parameters<StateCreator<State>>['1'];
 };
 
 type AsyncFnWithParams<State, Params, Data> = (

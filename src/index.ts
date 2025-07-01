@@ -64,7 +64,7 @@ type AsyncSliceTypeWithoutParams<
   Record<`run${Capitalize<Name>}Async`, () => Promise<Data>>;
 
 type GetSetApi<State> = {
-  set: Parameters<StateCreator<State>>['0'] | any;
+  set: Parameters<StateCreator<State>>['0'];
   get: Parameters<StateCreator<State>>['1'];
 };
 

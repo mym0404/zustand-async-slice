@@ -1,6 +1,6 @@
 {
   "name": "zustand-async-slice",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Zustand Utility For Creating Async Slice easily",
   "homepage": "https://github.com/mym0404/zustand-async-slice",
   "scripts": {
@@ -27,7 +27,8 @@
     "ts-jest": "^29.1.2",
     "tsdown": "^0.12.9",
     "typescript": "5.3.3",
-    "zustand": "^5.0.6"
+    "zustand": "^5.0.6",
+    "zx": "^8.6.0"
   },
   "peerDependencies": {
     "zustand": ">=5"

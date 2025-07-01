@@ -5960,6 +5960,7 @@ __metadata:
     tsdown: "npm:^0.12.9"
     typescript: "npm:5.3.3"
     zustand: "npm:^5.0.6"
+    zx: "npm:^8.6.0"
   peerDependencies:
     zustand: ">=5"
   languageName: unknown
@@ -5983,5 +5984,14 @@ __metadata:
     use-sync-external-store:
       optional: true
   checksum: 10c0/28e0c83978173741fe0d1f8c8d51b2708d6ad3d49968585c179a6ece45b7b149e489f89af9764b56dced842efe2914d89d5ba2d3890e026a4e4b072308fcd11c
+  languageName: node
+  linkType: hard
+
+"zx@npm:^8.6.0":
+  version: 8.6.0
+  resolution: "zx@npm:8.6.0"
+  bin:
+    zx: build/cli.js
+  checksum: 10c0/e43f0acb6572455c47c0ed4c402f73ed66ced2a8d3565adbdffaf0b5c6a7728e2f6aae271b9ebe7f480d6e63b75c8288575a7aa642508320bfc1dd8ef33e9a80
   languageName: node
   linkType: hard
